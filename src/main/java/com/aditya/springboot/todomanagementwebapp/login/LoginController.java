@@ -1,5 +1,7 @@
 package com.aditya.springboot.todomanagementwebapp.login;
 
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
+    // spring boot starter login is a transitive dependency for logger wheneve we add the dependency
+    // spring boot starter login logging  will automatically be included in....
+
+    private Logger logger = LoggerFactory.getLogger(getClass());
+
+
+
+
 
 //    @RequestMapping("login") // map to url
 //    //@ResponseBody // using this annotation we are sending the string returned here as response so
@@ -24,6 +34,9 @@ public class LoginController {
     // putting that in a model
     public String login(@RequestParam String name, ModelMap model){
         model.put("name", name);
+        logger.debug("Reques param is : {}",name);
+        logger.info("i want this to be printed at info level ..!");
+        logger.warn("i want this to be printed at warn level ..!");
         System.out.println("Request param is : "+ name); // Not recommended for production code
         return "login";
     }
