@@ -51,14 +51,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 //}
     @Controller
 public class LoginController{
+    private AuthenticationService authenticationService;
+
+    public LoginController(AuthenticationService authenticationService) {
+        super();
+        this.authenticationService = authenticationService;
+    }
+
     @RequestMapping(value="login", method= RequestMethod.GET)
     public String gotoLoginPage(){
         return "login";
     }
     @RequestMapping(value="login", method= RequestMethod.POST)
     public String gotoWelcomePage(@RequestParam String name, @RequestParam String password, ModelMap model) {
-        model.put("name", name);
-        model.put("password", password);
-        return "welcome";
+        if(authenticationService.authenticate(name, password)){
+
+            model.put("name", name);
+            // model.put("password", password);
+            // Implementing hardcoded authentication --> for this creating separate authentication class
+            // username : aditya
+            // password : password
+
+
+            return "welcome";
+        }
+        model.put("ErrorMessage", "Invalid Credentials! Please try agian.");
+        return "login";
     }
 }

@@ -73,6 +73,7 @@
     </head>
     <body>
         Welcome to the login page!
+        <pre>${ErrorMessage}</pre>
        <!-- here i am not defining any method inside the form so it is make use of GET but when we use GET
         all the information are sent as part of URL which is not secure so we should use post -->
         <form method="post">
