@@ -24,6 +24,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 ////    @RequestMapping("login") // map to url
 ////    //@ResponseBody // using this annotation we are sending the string returned here as response so
@@ -50,6 +51,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 //
 //}
     @Controller
+    @SessionAttributes("name")
 public class LoginController{
     private AuthenticationService authenticationService;
 
