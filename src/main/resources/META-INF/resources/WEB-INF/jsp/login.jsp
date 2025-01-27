@@ -1,4 +1,5 @@
-
+<%@ include file="common/header.jspf" %>
+<%@ include file="common/navigation.jspf" %>
 		<div class="container">
 			<h1>Login</h1>
 			<pre>${errorMessage}</pre>
@@ -8,3 +9,4 @@
 				<input type="submit">
 			</form>
 		</div>
+<%@ include file="common/footer.jspf" %>

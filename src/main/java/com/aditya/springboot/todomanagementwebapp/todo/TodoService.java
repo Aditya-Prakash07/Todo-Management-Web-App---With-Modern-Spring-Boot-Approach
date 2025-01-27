@@ -14,10 +14,12 @@ public class TodoService {
     private static List<Todo> todos = new ArrayList<>();
     public static int todosCount = 0;
     static{
-        todos.add(new Todo(++todosCount, "Aditya", "Lean Devops", LocalDate.now().plusYears(1),false));
-        todos.add(new Todo(++todosCount, "Aditya", "Lean Devops", LocalDate.now().plusYears(1),false));
-        todos.add(new Todo(++todosCount, "Aditya", "Lean Devops", LocalDate.now().plusYears(1),false));
-        todos.add(new Todo(++todosCount, "Aditya", "Lean Devops", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Aditya", "Learn SpringBoot", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Aditya", "Learn ReactJS", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Aditya", "Learn Devops", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Aditya", "Learn Full Stack Web Development", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Aditya", "Learn Everything", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Aditya", "Become Genius", LocalDate.now().plusYears(1),true));
     }
     public List<Todo> findByUsername(String username){
         return todos;
