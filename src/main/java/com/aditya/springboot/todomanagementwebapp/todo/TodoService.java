@@ -1,6 +1,7 @@
 package com.aditya.springboot.todomanagementwebapp.todo;
 
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -38,4 +39,8 @@ public class TodoService {
         return todo;
     }
 
+    public void updateTodo(@Valid Todo todo) {
+        deleteById(todo.getId());
+        todos.add(todo);
+    }
 }
