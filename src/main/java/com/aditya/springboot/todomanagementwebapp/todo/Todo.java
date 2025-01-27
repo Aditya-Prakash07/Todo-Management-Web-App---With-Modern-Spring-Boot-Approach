@@ -1,5 +1,7 @@
 package com.aditya.springboot.todomanagementwebapp.todo;
 
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 // will store these details in database
 // first we will create static list of todos => Database (H2, MySQL)
@@ -14,6 +16,7 @@ public class Todo {
 
     private  int id;
     private String username;
+    @Size(min=10, message = "Enter at least 10 characters")
     private String description;
     private LocalDate targetDate;
     private boolean done;
