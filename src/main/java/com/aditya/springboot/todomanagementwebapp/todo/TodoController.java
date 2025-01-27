@@ -43,4 +43,19 @@ public class TodoController {
                 LocalDate.now().plusYears(1), false);
         return "redirect:list-todos";
     }
+    @RequestMapping("delete-todo")
+    public String deleteTodo(@RequestParam int id) {
+        //Delete todo
+
+        todoService.deleteById(id);
+        return "redirect:list-todos";
+
+    }
+
+    @RequestMapping("update-todo")
+    public String showUpdateTodoPage(@RequestParam int id, ModelMap model) {
+        Todo todo = todoService.findById(id);
+        model.addAttribute("todo", todo);
+        return "todo";
+    }
 }
