@@ -20,6 +20,14 @@ public class TodoService {
         todos.add(new Todo(++todosCount, "Aditya", "Learn Full Stack Web Development", LocalDate.now().plusYears(1),false));
         todos.add(new Todo(++todosCount, "Aditya", "Learn Everything", LocalDate.now().plusYears(1),false));
         todos.add(new Todo(++todosCount, "Aditya", "Become Genius", LocalDate.now().plusYears(1),true));
+
+
+        todos.add(new Todo(++todosCount, "Mayank", "Learn Mathematics", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Mayank", "Learn Geopolitics", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Mayank", "Learn Polity", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Mayank", "Learn English", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Mayank", "Learn Everything", LocalDate.now().plusYears(1),false));
+        todos.add(new Todo(++todosCount, "Mayank", "Become Genius", LocalDate.now().plusYears(1),true));
     }
     public List<Todo> findByUsername(String username){
         Predicate<? super Todo> predicate =
